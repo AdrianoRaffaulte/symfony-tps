@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        {% if datosRecibidos %}
+            <h2>Datos recibidos:</h2>
+            <p><strong>Nombre:</strong> {{ nombre }}</p>
+            <p><strong>Correo:</strong> {{ correo }}</p>
+            <a href="{{ path('app_registro') }}">Volver al formulario</a>
+        {% else %}
+            <h2>Formulario de registro</h2>
+            <form method="POST">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" name="nombre" id="nombre" required><br><br>
+
+                <label for="correo">Correo:</label><br>
+                <input type="email" name="correo" id="correo" required><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

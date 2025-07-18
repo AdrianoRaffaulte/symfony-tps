@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saludo aleatorio{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>{{ mensaje }}</h1>
+
+        <a href="{{ path('app_aleatorio') }}">Generar otro</a>
+    </div>
+{% endblock %}

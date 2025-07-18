@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Estado de ánimo{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        {% if estado %}
+            <h1>Hola {{ nombre }}, veo que hoy estás {{ estado }}.</h1>
+        {% else %}
+            <h1>Hola {{ nombre }}, ¿cómo estás hoy?</h1>
+        {% endif %}
+    </div>
+{% endblock %}

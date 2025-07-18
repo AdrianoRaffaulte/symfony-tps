@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saludo{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>¡Hola, {{ nombre }}! Bienvenido/a al sistema.</h1>
+        <a href="{{ path('app_despedida', {'nombre': nombre}) }}">Ir a despedida</a>
+    </div>
+{% endblock %}
