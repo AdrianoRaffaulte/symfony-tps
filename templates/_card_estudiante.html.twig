@@ -1,0 +1,15 @@
+{# // EJERCICIO 3 TP 2 #}
+{% embed 'base_components/card_base.html.twig' with { estudiante: estudiante, macros: macros } %}
+    {% block contenido %}
+        <h5 class="card-title">{{ estudiante.nombre }}</h5>
+        <p class="card-text">Nota: {{ estudiante.nota }}</p>
+
+        {% if estudiante.nota >= 6 %}
+            <p class="text-success"><strong>Aprobado</strong></p>
+        {% else %}
+            <p class="text-danger"><strong>Desaprobado</strong></p>
+        {% endif %}
+
+        {{ macros.boton('Ver detalle', '#' ~ estudiante.nombre|lower, 'secondary') }}
+    {% endblock %}
+{% endembed %}

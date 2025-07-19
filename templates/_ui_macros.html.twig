@@ -1,0 +1,6 @@
+{# // EJERCICIO 3 TP 2 #}
+{% macro boton(texto, url, tipo) %}
+    <a href="{{ url }}" class="btn btn-{{ tipo }}">
+        {{ texto }}
+    </a>
+{% endmacro %}

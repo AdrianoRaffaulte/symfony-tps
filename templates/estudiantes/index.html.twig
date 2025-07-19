@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{# // EJERCICIO 2 y 3 TP 2 #}
+{% block title %}Listado de Estudiantes{% endblock %}
+
+{% block body %}
+    {% import '_ui_macros.html.twig' as macros %}
+
+    <div class="container mt-4">
+        <h2>Listado de Estudiantes</h2>
+
+        {% if estudiantes is empty %}
+            {% include '_alerta.html.twig' with { 'mensaje': 'No hay estudiantes registrados.' } %}
+        {% else %}
+            <div class="d-flex flex-wrap gap-3">
+                {% for estudiante in estudiantes %}
+                    {% embed '_card_estudiante.html.twig' with { estudiante: estudiante, macros: macros } %}
+                    {% endembed %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
